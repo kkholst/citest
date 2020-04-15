@@ -12,7 +12,7 @@ jobs:
     # --------------------------------------------------------------------------------
 
     - os: osx
-      language: python
+      language: shell
       install:
         - python3 -m pip install targeted
       script:

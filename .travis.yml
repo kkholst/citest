@@ -1,0 +1,21 @@
+language: python
+
+jobs:
+  include:
+    - os: linux
+      language: python
+      install:
+        - python3 -m pip install targeted
+      script:
+        - python3 test.py
+
+    # --------------------------------------------------------------------------------
+
+    - name: os: osx
+      language: python
+      install:
+        - python3 -m pip install targeted
+      script:
+        - python3 test.py
+
+    # --------------------------------------------------------------------------------

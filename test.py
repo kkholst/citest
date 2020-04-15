@@ -12,4 +12,7 @@ def test():
 
 if __name__ == "__main__":
     # execute only if run as a script
+    print('\n'+'_'*50+'\n')
+    print('targeted version ' + targeted.__version__)
     print(test())
+    print('_'*50+'\n')

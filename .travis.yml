@@ -11,7 +11,7 @@ jobs:
 
     # --------------------------------------------------------------------------------
 
-    - name: os: osx
+    - os: osx
       language: python
       install:
         - python3 -m pip install targeted

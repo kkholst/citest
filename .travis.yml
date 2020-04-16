@@ -2,7 +2,8 @@ language: python
 
 jobs:
   include:
-    - os: linux
+    - name: linux
+      os: linux
       language: python
       install:
         - python3 -m pip install targeted
@@ -11,7 +12,8 @@ jobs:
 
     # --------------------------------------------------------------------------------
 
-    - os: osx
+    - name: osx
+      os: osx
       language: shell
       install:
         - python3 -m pip install targeted

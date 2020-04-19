@@ -32,6 +32,7 @@ jobs:
       before_install:
         -  export "PATH=/c/tools/anaconda3:/c/tools/anaconda3/scripts:$PATH"
       install:
+        - choco install openssl
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
         - conda info -a

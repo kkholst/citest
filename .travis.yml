@@ -30,11 +30,11 @@ jobs:
         directories:
           - $HOME/AppData/Local/Temp/chocolatey
           - $HOME/Tools
-          - C:/Tools
+          - /C/Tools/Anaconda3
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
-        - C:/Tools/Anaconda3/conda install -c anaconda openblas
+        - $ChocolateyToolsLocation\Anaconda3\conda install -c anaconda openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

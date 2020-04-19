@@ -29,10 +29,10 @@ jobs:
       cache:
         directories:
           - $HOME/AppData/Local/Temp/chocolatey
+          - C:\Tools
       install:
-        - choco install anaconda3 --params '"/AddToPath"'
+        - choco install anaconda3 --params="/AddToPath:1" -y
       script:
-        -
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

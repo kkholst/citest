@@ -29,6 +29,8 @@ jobs:
       cache:
         directories:
           - $HOME/AppData/Local/Temp/chocolatey
+      before_install:
+        -  export "PATH=c/tools/anaconda3:c/tools/anaconda3/scripts:$PATH"
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:

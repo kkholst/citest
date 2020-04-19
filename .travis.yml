@@ -34,7 +34,12 @@ jobs:
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
+        - conda config --set always_yes yes --set changeps1 no
+        - conda update -q conda
+        # Useful for debugging any issues with conda
+        - conda info -a
         - conda create --name myenv -y
+        - conda activate myenv
         - echo $PATH
         - conda install -c anaconda openblas
         - /c/Tools/Anaconda3/Scripts/conda install -c anaconda openblas

@@ -34,7 +34,8 @@ jobs:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
         - echo $PATH
-
+        - refreshenv
+        - echo $PATH
         - /C/Tools/Anaconda3/conda install -c anaconda openblas
         - C:\Tools\Anaconda3\bin\conda install -c anaconda openblas
         - C:\Tools\Anaconda3\conda install -c anaconda openblas

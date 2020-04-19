@@ -35,6 +35,7 @@ jobs:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
         - conda info -a
+        - conda config --set ssl_verify no
         - conda init powershell
         - conda config --set always_yes yes --set changeps1 no
         - conda update -q conda

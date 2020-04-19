@@ -35,21 +35,15 @@ jobs:
         - choco install openssl
         - choco install anaconda3 --params="/AddToPath:1" -y
         - conda config --set always_yes yes --set changeps1 no
-        - conda init cmd.exe
+        - conda init powershell
+        - powershell conda create --name myenv -y
       script:
-        - conda init cmd.exe
-        - conda info -a
-        - anaconda -h
-        - conda config --set ssl_verify no
-        - conda update -q conda
-        # Useful for debugging any issues with conda
-        - conda create --name myenv -y
-        - conda activate myenv
-        - echo $PATH
-        - conda install -c conda-forge openblas
+        # - conda config --set ssl_verify no
+        - powershell conda activate myenv
+        - powershell conda install -c conda-forge openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
-        - ./configure
+        - powershell ./configure
 
 notifications:
   slack:

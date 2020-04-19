@@ -3,23 +3,23 @@ language: python
 jobs:
   include:
 
-    - name: linux
-      os: linux
-      language: python
-      install:
-        - python3 -m pip install targeted
-      script:
-        - python3 test.py
+    # - name: linux
+    #   os: linux
+    #   language: python
+    #   install:
+    #     - python3 -m pip install targeted
+    #   script:
+    #     - python3 test.py
 
     # --------------------------------------------------------------------------------
 
-    - name: osx
-      os: osx
-      language: shell
-      install:
-        - python3 -m pip install targeted
-      script:
-        - python3 test.py
+    # - name: osx
+    #   os: osx
+    #   language: shell
+    #   install:
+    #     - python3 -m pip install targeted
+    #   script:
+    #     - python3 test.py
 
     # --------------------------------------------------------------------------------
 
@@ -29,8 +29,8 @@ jobs:
       install:
         - choco install anaconda3
         - choco install git.install
-        - conda install -c anaconda openblas
       script:
+        - conda install -c anaconda openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

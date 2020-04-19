@@ -27,7 +27,7 @@ jobs:
       os: windows
       language: shell
       install:
-        - choco install anaconda3
+        - choco install anaconda3 --params '"/AddToPath"'
         - choco install git.install
       script:
         - conda install -c anaconda openblas

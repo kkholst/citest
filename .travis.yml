@@ -2,6 +2,7 @@ language: python
 
 jobs:
   include:
+
     - name: linux
       os: linux
       language: python
@@ -21,3 +22,15 @@ jobs:
         - python3 test.py
 
     # --------------------------------------------------------------------------------
+
+    - name: windows
+      os: windows
+      language: shell
+      install:
+        - choco install anaconda3
+        - choco install git.install
+        - conda install -c anaconda openblas
+      script:
+        - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
+        - cd armadillo
+        - ./configure

@@ -25,7 +25,7 @@ jobs:
 
     - name: windows
       os: windows
-      language: cpp
+      language: shell
       cache:
         directories:
           - $HOME/AppData/Local/Temp/chocolatey

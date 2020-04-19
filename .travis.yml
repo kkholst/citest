@@ -34,10 +34,11 @@ jobs:
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
+        - conda info -a
+        - conda init powershell
         - conda config --set always_yes yes --set changeps1 no
         - conda update -q conda
         # Useful for debugging any issues with conda
-        - conda info -a
         - conda create --name myenv -y
         - conda activate myenv
         - echo $PATH

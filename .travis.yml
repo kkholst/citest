@@ -46,8 +46,7 @@ jobs:
         - conda create --name myenv -y
         - conda activate myenv
         - echo $PATH
-        - conda install -c anaconda openblas
-        - /c/Tools/Anaconda3/Scripts/conda install -c anaconda openblas
+        - conda install -c conda-forge openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

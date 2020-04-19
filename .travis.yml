@@ -25,12 +25,14 @@ jobs:
 
     - name: windows
       os: windows
-      language: shell
+      language: cpp
+      cache:
+        directories:
+          - $HOME/AppData/Local/Temp/chocolatey
       install:
         - choco install anaconda3 --params '"/AddToPath"'
-        - choco install git.install
       script:
-        - conda install -c anaconda openblas
+        -
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

@@ -34,10 +34,11 @@ jobs:
       script:
         - echo $PATH
         - refreshenv
+        - cmd.exe /c "refreshenv"
         - echo $PATH
         - /C/Tools/Anaconda3/conda install -c anaconda openblas
-        - C:\Tools\Anaconda3\Scripts\conda install -c anaconda openblas
-        - C:\Tools\Anaconda3\conda install -c anaconda openblas
+        - C:/Tools/Anaconda3/Scripts/conda install -c anaconda openblas
+        - C:/Tools/Anaconda3/conda install -c anaconda openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

@@ -33,6 +33,7 @@ jobs:
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
+        - conda install -c anaconda openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

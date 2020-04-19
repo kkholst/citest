@@ -34,6 +34,7 @@ jobs:
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
+        - conda create --name myenv -y
         - echo $PATH
         - conda install -c anaconda openblas
         - /c/Tools/Anaconda3/Scripts/conda install -c anaconda openblas

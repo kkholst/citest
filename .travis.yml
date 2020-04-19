@@ -32,7 +32,7 @@ jobs:
       install:
         - choco install anaconda3 --params="/AddToPath:1" -y
       script:
-        - export /c/tools/anaconda3:/c/tools/anaconda3/scripts:$PATH
+        - set PATH=%PATH%;c:\tools\anaconda3;c:\tools\anaconda3\scripts
         - echo $PATH
         - conda install -c anaconda openblas
         - C:/Tools/Anaconda3/Scripts/conda install -c anaconda openblas

@@ -35,7 +35,7 @@ jobs:
         - choco install openssl
         - choco install anaconda3 --params="/AddToPath:1" -y
         - conda config --set always_yes yes --set changeps1 no
-        - conda init bash
+        - conda init cmd.exe
       script:
         - conda info -a
         - anaconda -h

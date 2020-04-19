@@ -34,12 +34,12 @@ jobs:
       install:
         - choco install openssl
         - choco install anaconda3 --params="/AddToPath:1" -y
+        - conda config --set always_yes yes --set changeps1 no
+        - conda init bash
       script:
         - conda info -a
         - anaconda -h
         - conda config --set ssl_verify no
-        - conda init powershell
-        - conda config --set always_yes yes --set changeps1 no
         - conda update -q conda
         # Useful for debugging any issues with conda
         - conda create --name myenv -y

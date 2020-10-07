@@ -28,19 +28,16 @@ jobs:
       language: shell
       cache:
         directories:
-          - $HOME/AppData/Local/Temp/chocolatey
+          - $HOME/AppData/Local/Temp/vcpkg
       before_install:
-        -  export "PATH=/c/tools/anaconda3:/c/tools/anaconda3/scripts:$PATH"
+        - export VCPKG_DEFAULT_TRIPLET=x86-windows
       install:
-        - choco install openssl
-        - choco install anaconda3 --params="/AddToPath:1" -y
-        - conda config --set always_yes yes --set changeps1 no
-        - conda init cmd.exe
-        - conda create --name myenv -y
+        - git clone https://github.com/Microsoft/vcpkg.git
+        - cd vcpkg
+        - ./bootstrap-vcpkg.bat
+        - ./vcpkg integrate install
+         - travis_wait 30 ./vcpkg install clapack
       script:
-        # - conda config --set ssl_verify no
-        - conda activate myenv
-        - conda install -c conda-forge openblas
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
         - ./configure

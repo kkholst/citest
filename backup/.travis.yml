@@ -29,6 +29,7 @@ jobs:
       cache:
         directories:
           - $HOME/AppData/Local/Temp/vcpkg
+          - C:\Users\travis\build\kkholst\citest\vcpkg
       before_install:
         - export VCPKG_DEFAULT_TRIPLET=x86-windows
       install:

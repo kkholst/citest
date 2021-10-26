@@ -36,8 +36,8 @@ jobs:
         - git clone https://github.com/Microsoft/vcpkg.git
         - cd vcpkg
         - ./bootstrap-vcpkg.bat
+        - travis_wait 30 ./vcpkg install openblas:x86-windows
         - ./vcpkg integrate install
-        - travis_wait 30 ./vcpkg install clapack
       script:
         - git clone https://gitlab.com/conradsnicta/armadillo-code.git armadillo
         - cd armadillo
